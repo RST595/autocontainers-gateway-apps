@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: post-app
+          uri: ${POST_APP_URI:http://localhost:8082}
+          predicates:
+            - Path=/post/**
+          filters:
+            - PrefixPath=/api

@@ -1,0 +1,11 @@
+pluginManagement {
+    repositories {
+        maven { url 'https://repo.spring.io/milestone' }
+        gradlePluginPortal()
+    }
+}
+
+rootProject.name = 'autocontainers-gateway-apps'
+include 'autocontainers-app'
+include 'autocontainers-gateway'
+

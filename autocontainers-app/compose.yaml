@@ -1,0 +1,9 @@
+services:
+  postgres:
+    image: 'postgres:15.0'
+    environment:
+      - 'POSTGRES_DB=autoDB'
+      - 'POSTGRES_PASSWORD=password'
+      - 'POSTGRES_USER=sa'
+    ports:
+      - '5431:5432'

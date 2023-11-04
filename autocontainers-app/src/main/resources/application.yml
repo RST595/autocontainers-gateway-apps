@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/autoDB
+    password: password
+    username: sa
+  liquibase:
+    change-log: db/changelog/changelog-master.xml
+  # If file location not specified, spring will search file in root (autocontainers-gateway-apps) folder
+  docker:
+    compose:
+      file: ./autocontainers-app/compose.yaml
+init:
+  fromJson: false
+server:
+  port: 8082

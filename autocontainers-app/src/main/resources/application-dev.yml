@@ -1,0 +1,15 @@
+spring:
+  liquibase:
+    change-log: db/changelog/changelog-master.xml
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/autoDB2}
+    password: ${DB_PASSWORD:password2}
+    username: ${DB_USERNAME:sa2}
+  docker:
+    compose:
+      enabled: false
+init:
+  fromJson: false
+server:
+  port: ${SERVER_PORT:8082}
