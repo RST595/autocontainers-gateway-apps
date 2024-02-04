@@ -1,5 +1,6 @@
 package com.rst.autocomposedb.post;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -37,6 +38,7 @@ class PostDataInitializer implements CommandLineRunner {
     }
 
     private List<Post> getTestPosts() throws IOException {
-        return objectMapper.readValue(new File(FILE_PATH), Posts.class).getPosts();
+        return objectMapper.readValue(new File(FILE_PATH), new TypeReference<>() {
+        });
     }
 }
